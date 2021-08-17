@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 // Redux
 import { useDispatch } from 'react-redux';
 
+// Redux - Actions
 import { getPosts } from './actions/posts';
 
 // Image
