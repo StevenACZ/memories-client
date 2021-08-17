@@ -17,7 +17,7 @@ import useStyles from './Styles';
 
 // Components
 import Posts from './components/Posts/Posts.jsx';
-// import Form from './components/Form/Form.jsx';
+import Form from './components/Form/Form.jsx';
 
 const App = () => {
 	const classes = useStyles();
@@ -53,7 +53,7 @@ const App = () => {
 							<Posts />
 						</Grid>
 						<Grid item xs={12} sm={4}>
-							<Posts />
+							<Form />
 						</Grid>
 					</Grid>
 				</Container>
