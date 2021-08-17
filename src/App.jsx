@@ -1,5 +1,10 @@
 // React
-import React from 'react';
+import React, { useEffect } from 'react';
+
+// Redux
+import { useDispatch } from 'react-redux';
+
+import { getPosts } from './actions/posts';
 
 // Image
 import memories from './images/memories.png';
@@ -16,6 +21,11 @@ import Posts from './components/Posts/Posts.jsx';
 
 const App = () => {
 	const classes = useStyles();
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getPosts());
+	}, [dispatch]);
 
 	return (
 		<Container maxWidth="lg">
