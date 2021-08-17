@@ -1,16 +1,41 @@
 // React
 import React from 'react';
 
+// Moment
+import moment from 'moment';
+
+// Material UI - Components
+import { Card, Button, CardMedia, Typography } from '@material-ui/core';
+
+// Material UI - Icons
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import DeleteIcon from '@material-ui/icons/Delete';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+
 // Styles
 import useStyles from './Styles';
 
-function Post() {
+function Post({ media, selectedFile, title, creator, createdAt, tags }) {
 	const classes = useStyles();
 
 	return (
-		<div>
-			<h1>Post</h1>
-		</div>
+		<Card className={classes.card}>
+			<CardMedia className={classes.media} image={selectedFile} title={title} />
+			<div className={classes.overlay}>
+				<Typography variant="h6">{creator}</Typography>
+				<Typography variant="body2">{moment(createdAt).fromNow()}</Typography>
+			</div>
+			<div className={classes.overlay2}>
+				<Button style={{ color: 'white' }} size="small" onClick={() => {}}>
+					<MoreHorizIcon fontSize="default" />
+				</Button>
+			</div>
+			<div className={classes.details}>
+				<Typography variant="body2" color="textSecondary">
+					{tags.map(tag => `#${tag}`)}
+				</Typography>
+			</div>
+		</Card>
 	);
 }
 
