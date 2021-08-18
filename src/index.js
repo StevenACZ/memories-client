@@ -11,6 +11,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // Redux - Reducers
 import reducers from './reducers';
 
+// Styles
+import './index.css';
+
 // Components
 import App from './App.jsx';
 
