@@ -23,7 +23,6 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import useStyles from './Styles';
 
 function Post({
-	media,
 	selectedFile,
 	title,
 	creator,
@@ -63,7 +62,7 @@ function Post({
 					{likeCount}
 				</Button>
 				<Button size="small" color="primary" onClick={() => {}}>
-					<ThumbUpAltIcon fontSize="small" />
+					<DeleteIcon fontSize="small" />
 					Delete
 				</Button>
 			</CardActions>
