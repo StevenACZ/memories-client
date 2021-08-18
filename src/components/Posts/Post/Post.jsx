@@ -5,7 +5,14 @@ import React from 'react';
 import moment from 'moment';
 
 // Material UI - Components
-import { Card, Button, CardMedia, Typography } from '@material-ui/core';
+import {
+	Card,
+	Button,
+	CardMedia,
+	Typography,
+	CardContent,
+	CardActions,
+} from '@material-ui/core';
 
 // Material UI - Icons
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
@@ -15,7 +22,16 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 // Styles
 import useStyles from './Styles';
 
-function Post({ media, selectedFile, title, creator, createdAt, tags }) {
+function Post({
+	media,
+	selectedFile,
+	title,
+	creator,
+	createdAt,
+	tags,
+	message,
+	likeCount,
+}) {
 	const classes = useStyles();
 
 	return (
@@ -35,6 +51,22 @@ function Post({ media, selectedFile, title, creator, createdAt, tags }) {
 					{tags.map(tag => `#${tag}`)}
 				</Typography>
 			</div>
+			<CardContent>
+				<Typography variant="h5" gutterBottom>
+					{message}
+				</Typography>
+			</CardContent>
+			<CardActions className={classes.cardActions}>
+				<Button size="small" color="primary" onClick={() => {}}>
+					<ThumbUpAltIcon fontSize="small" />
+					Like
+					{likeCount}
+				</Button>
+				<Button size="small" color="primary" onClick={() => {}}>
+					<ThumbUpAltIcon fontSize="small" />
+					Delete
+				</Button>
+			</CardActions>
 		</Card>
 	);
 }
